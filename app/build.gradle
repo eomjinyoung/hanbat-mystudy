@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.12.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -30,11 +33,9 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-tasks.named('run') {
-    standardInput = System.in // 표준 입력을 시스템 입력으로 설정
-}
 
 tasks.withType(JavaExec) {
     systemProperty 'sun.stdout.encoding', 'UTF-8'
     systemProperty 'sun.stderr.encoding', 'UTF-8'
 }
+
